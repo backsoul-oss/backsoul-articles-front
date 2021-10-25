@@ -2,7 +2,7 @@
   <div v-if="article" class="mx-4 flex justify-center mb-20">
     <div class="flex justify-center flex-col w-full 2xl:w-2/3">
     <img :src="`${$axios.defaults.baseURL}/${article.image}`" alt="" srcset="" style="object-fit: cover;" class="h-60 2xl:h-96">
-    <h1 class="text-lg font-medium text-center my-5" style="text-align: start;font-size: 3rem;color: #404040;font-family: fangsong;">{{ article.title }}</h1>
+    <h1 class="font-medium text-center my-5 text-3xl 2xl:text-4xl" style="text-align: start;color: #404040;font-family: fangsong;">{{ article.title }}</h1>
     <div v-html="markdownToHtml" class="content-html"></div>
     </div>
   </div>

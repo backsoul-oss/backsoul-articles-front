@@ -38,8 +38,8 @@
             />
             <div class="flexflex-col w-full">
               <div class="flex flex-col items-start w-full m-3">
-                <p style="font-weight: 300; color: #d9d9d9">
-                  2021/10/26
+                <p style="font-weight: 300; color: #d9d9d9" class="mb-2">
+                  {{ created_at }}
                 </p>
                 <h1 class="text-lg font-medium" style="text-align: initial;font-size: 1.1rem;line-height: 20px;"> {{ article.title }}</h1>
                 <p class="font-normal text-left">
@@ -55,17 +55,20 @@
 </template>
 
 <script>
+import dayjs from 'dayjs'
 export default {
   data() {
     return {
       articles: [],
       loading: true,
+      created_at: null,
     }
   },
   methods: {
     async getArticles() {
       this.$axios.$get('/articles').then((response) => {
         this.articles = response.articles
+        this.created_at = dayjs(response.articles.created_at).format('DD MMMM YYYY')
       })
     },
     redirectArticle(slug) {
