@@ -11,6 +11,7 @@ jobs:
        - name: build
          run: |
            yarn install
+           npm install -g nuxt
            nuxt generate
 
        - uses: amondnet/vercel-action@v20
