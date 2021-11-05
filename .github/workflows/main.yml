@@ -4,15 +4,25 @@ on:
     branches:
       - master
 jobs:
-  deploy:
+  nuxtjs:
     runs-on: ubuntu-latest
     steps:
-       - uses: actions/checkout@v2
-       - uses: ./
-         id: vercel-action
-         with:
-           vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
-           vercel-org-id: ${{ secrets.ORG_ID}}  #Required
-           vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
-           working-directory: ./dist
-           github-comment: false
+      - uses: actions/checkout@v2
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: build
+        run: |
+          yarn
+          yarn generate
+      - uses: ./
+        id: vercel-action
+        with:
+          github-token: ${{ secrets.GB_TOKEN }}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_ANGULAR }}
+          working-directory: ./dist
