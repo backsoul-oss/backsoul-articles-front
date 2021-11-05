@@ -1,7 +1,8 @@
 <template>
   <div v-if="article" class="mx-4 flex justify-center mb-20">
     <div class="flex justify-center flex-col w-full 2xl:w-2/3">
-    <img :src="`${$axios.defaults.baseURL}/${article.image}`" alt="" srcset="" style="object-fit: cover;" class="h-60 2xl:h-96">
+    <img :src="`https://res.cloudinary.com/backsoul/image/upload/v1/${article.image}`" alt="" srcset="" style="object-fit: cover;" class="h-60 2xl:h-96">
+    <p class="mt-5" style="color: #c3bdbd;font-weight: 400;font-family: inherit;">{{convertDate(article.createdAt)}}</p>
     <h1 class="font-medium text-center my-5 text-3xl 2xl:text-4xl" style="text-align: start;color: #404040;font-family: fangsong;">{{ article.title }}</h1>
     <div v-html="markdownToHtml" class="content-html"></div>
     </div>
@@ -10,6 +11,8 @@
 
 <script>
 import marked from 'marked';
+import { ARTICLE_BY_SLUG } from '~/graphql/query';
+import dayjs from 'dayjs';
 export default {
   data() {
     return {
@@ -22,10 +25,17 @@ export default {
    }
  },
   methods:{
+    convertDate(date){
+      return dayjs(date).format('DD MMMM YYYY HH:mm:ss');
+    },
     getArticle(slug){
-      this.$axios.get(`/article/${slug}`)
-      .then(({data} )=> {
-       this.article = data.article;
+      this.$apollo.query({
+        query:ARTICLE_BY_SLUG,
+        variables:{
+          slug
+        }
+      }).then(({data})=>{
+        this.article = data.articleBySlug;
       })
     }
   },

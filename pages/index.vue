@@ -27,10 +27,10 @@
             "
             v-for="article in articles"
             :key="article._slug"
-            @click="redirectArticle(article._slug)"
+            @click="redirectArticle(article.Slug)"
           >
             <img
-              :src="`${$axios.defaults.baseURL}/${article.image}`"
+              :src="`https://res.cloudinary.com/backsoul/image/upload/v1/${article.image}`"
               alt=""
               srcset=""
               style="height: 15rem; width: 100%; object-fit: cover"
@@ -39,7 +39,7 @@
             <div class="flexflex-col w-full">
               <div class="flex flex-col items-start w-full m-3">
                 <p style="font-weight: 300; color: #d9d9d9" class="mb-2">
-                  {{ created_at }}
+                  {{ convertDate(article.createdAt) }}
                 </p>
                 <h1 class="text-lg font-medium" style="text-align: initial;font-size: 1.1rem;line-height: 20px;"> {{ article.title }}</h1>
                 <p class="font-normal text-left">
@@ -56,6 +56,7 @@
 
 <script>
 import dayjs from 'dayjs'
+import {ARTICLES} from '../graphql/query'
 export default {
   data() {
     return {
@@ -65,11 +66,17 @@ export default {
     }
   },
   methods: {
+    convertDate(date){
+      return dayjs(date).format('DD MMMM YYYY')
+    },
     async getArticles() {
-      this.$axios.$get('/articles').then((response) => {
-        this.articles = response.articles
-        this.created_at = dayjs(response.articles.created_at).format('DD MMMM YYYY')
-      })
+      this.$apollo.query({
+        query:ARTICLES}).then(({data}) => {
+          console.log('====================================');
+          console.log(data.allArticles);
+          console.log('====================================');
+          this.articles = data.allArticles
+        })
     },
     redirectArticle(slug) {
       this.$router.push(`/${slug}`)
