@@ -8,16 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - uses: actions/checkout@v2
-       - name: build
-         run: |
-           yarn install
-           npm install -g nuxt
-           nuxt generate
-
+       - name: deploy site to vercel
        - uses: amondnet/vercel-action@v20
          with:
            vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
            github-token: ${{ secrets.GB_TOKEN }} #Optional
            vercel-org-id: ${{ secrets.ORG_ID}}  #Required
            vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
-           working-directory: dist/
