@@ -7,11 +7,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-       - uses: actions/checkout@v2
-         with:
-            ssh-key: ${{ secrets.GB_TOKEN }}
-            submodules: recursive  # Fetch private content
-
        - name: Deploy to Vercel
          uses: amondnet/vercel-action@v20
          id: vercel-action
