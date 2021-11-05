@@ -108,6 +108,7 @@ export default {
 }
 .container-general {
   background: #f3f3f3;
+  margin-top: -2.5rem;
 }
 html {
   overflow-x: hidden;
