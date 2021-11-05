@@ -43,7 +43,7 @@ export default {
     apollo: {
         clientConfigs: {
             default: {
-                httpEndpoint: 'http://back.articles.backsoul.xyz/graphql',
+                httpEndpoint: 'https://backsoul-articles-back.herokuapp.com/graphql',
             }
         }
     },
