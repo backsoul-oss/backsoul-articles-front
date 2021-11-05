@@ -43,7 +43,7 @@
                 </p>
                 <h1 class="text-lg font-medium" style="text-align: initial;font-size: 1.1rem;line-height: 20px;"> {{ article.title }}</h1>
                 <p class="font-normal text-left">
-                  {{ article.text_description }}
+                  {{ article.textDescription }}
                 </p>
               </div>
             </div>
