@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - uses: actions/checkout@v2
-       - name: Deploy to Vercel
-         uses: amondnet/vercel-action@v20
+       - uses: ./
          id: vercel-action
          with:
            vercel-token: ${{ secrets.VERCEL_TOKEN }} # Required
            vercel-org-id: ${{ secrets.ORG_ID}}  #Required
            vercel-project-id: ${{ secrets.PROJECT_ID}} #Required
            working-directory: ./dist
+           github-comment: false
