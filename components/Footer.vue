@@ -1,7 +1,7 @@
 <template>
-  <div class="flex justify-center items-center bg-black">
+  <div class="flex justify-center items-center bg-background-primary">
     <div class="flex flex-col justify-center items-center">
-      <p class="mt-5 text-white">Backsoul developed with</p>
+      <p class="mt-5 text-primary">Backsoul developed with</p>
       <div
         class="grid grid-cols-4 my-5 items-center"
         style="justify-items: center"
@@ -13,7 +13,7 @@
             class="
               fill-current
               text-white
-              hover:text-green-400 hover:-translate-y-2
+              hover:text-primary hover:-translate-y-2
               transform
               duration-500
             "
@@ -27,7 +27,7 @@
             class="
               fill-current
               text-white
-              hover:text-green-400 hover:-translate-y-2
+              hover:text-primary hover:-translate-y-2
               transform
               duration-500
             "
@@ -41,7 +41,7 @@
             class="
               fill-current
               text-white
-              hover:text-blue-700 hover:-translate-y-2
+              hover:text-primary hover:-translate-y-2
               transform
               duration-500
             "
@@ -55,7 +55,7 @@
             class="
               fill-current
               text-white
-              hover:text-gray-200 hover:-translate-y-2
+              hover:text-primary hover:-translate-y-2
               transform
               duration-500
             "

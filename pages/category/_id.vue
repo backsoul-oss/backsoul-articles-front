@@ -1,6 +1,7 @@
 <template>
-  <div class="h-full">
-    <div class="text-center">
+  <div class="h-full" >
+     <div class="text-center" >
+
       <div class="flex justify-center w-screen">
         <div
           class="
@@ -26,20 +27,22 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
 import { ARTICLES } from '~/graphql/query'
 export default {
-  data() {
+  data(){
     return {
       articles: [],
-      loading: true,
-    }
+    id: this.$route.params.id,
+  }
   },
   methods: {
     async getArticles() {
       this.$apollo
         .query({
           query: ARTICLES,
+          variables: {
+            category_id: this.id,
+          },
         })
         .then(({ data }) => {
           this.articles = data.allArticles
@@ -54,6 +57,3 @@ export default {
   },
 }
 </script>
-<style lang="scss">
-
-</style>

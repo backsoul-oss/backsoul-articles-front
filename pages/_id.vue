@@ -3,7 +3,10 @@
     <div class="flex justify-center flex-col w-full 2xl:w-2/3">
     <img :src="`https://res.cloudinary.com/backsoul/image/upload/v1/${article.image}`" alt="" srcset="" style="object-fit: cover;" class="h-60 2xl:h-96">
     <p class="mt-5" style="color: #c3bdbd;font-weight: 400;font-family: inherit;">{{convertDate(article.createdAt)}}</p>
-    <h1 class="font-medium text-center my-5 text-3xl 2xl:text-4xl" style="text-align: start;color: #404040;font-family: fangsong;">{{ article.title }}</h1>
+    <h1 class="font-medium text-center my-5 text-3xl 2xl:text-4xl text-primary" style="text-align: start;font-family: fangsong;">{{ article.title }}</h1>
+    <div class="flex">
+    <Category v-for="category of article.categories" :key="category.id" :category="category" />
+    </div>
     <div v-html="markdownToHtml" class="content-html"></div>
     </div>
   </div>
@@ -35,12 +38,14 @@ export default {
           slug
         }
       }).then(({data})=>{
+          this.$store.dispatch('loading', false)
         this.article = data.articleBySlug;
       })
     }
   },
   mounted(){
     this.getArticle(this.$route.params.id)
+      this.$store.dispatch('loading', true)
   }
 }
 </script>
@@ -53,11 +58,11 @@ export default {
     display: flex;
     flex-direction: column;
     width: 100%;
+    color: var(--text-color-primary);
     > h2{
       font-size: 1.5rem;
       font-weight: 400;
       font-family: inherit;
-      color: #606060;
 
     }
     > p{

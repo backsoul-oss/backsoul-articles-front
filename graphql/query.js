@@ -24,6 +24,18 @@ query articleById($slug: String!){
     image
     createdAt
     textDescription
+    categories{
+      id
+      name
+    }
   }
 }
 `;
+
+export const CATEGORY_BY_ID = gql `
+query categoryById($id: ID!){
+  categoryById(id:$id){
+    id
+    name
+  }
+}`
