@@ -15,11 +15,15 @@ export default {
     },
 
     // Global CSS: https://go.nuxtjs.dev/config-css
-    css: [],
+    css: [
+        '~/assets/styles/main',
+        'boxicons/css/boxicons.min.css'
+    ],
 
     // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
     plugins: [
         { src: '~/plugins/vue-iconsvg.js', mode: 'client' },
+        { src: '~/plugins/vuesax.js', mode: 'client' },
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -43,7 +47,8 @@ export default {
     apollo: {
         clientConfigs: {
             default: {
-                httpEndpoint: 'https://backsoul-articles-back.herokuapp.com/graphql',
+                // httpEndpoint: 'https://backsoul-articles-back.herokuapp.com/graphql',
+                httpEndpoint: 'http://localhost:8000/graphql',
             }
         }
     },

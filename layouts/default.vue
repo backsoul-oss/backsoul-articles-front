@@ -1,5 +1,5 @@
 <template>
-<div class="h-screen">
+<div class="h-screen bg-background-primary" :class="theme">
   <client-only>
   <Header />
   <div class="h-screen">
@@ -9,3 +9,12 @@
   </client-only>
 </div>
 </template>
+<script>
+export default {
+  computed:{
+    theme(){
+      return this.$store.state.theme
+  }
+  }
+}
+</script>

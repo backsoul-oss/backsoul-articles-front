@@ -23,7 +23,7 @@
               rounded-lg
               container-card
               mt-10
-              bg-white
+              bg-background-tertiary
             "
             v-for="article in articles"
             :key="article._slug"
@@ -107,7 +107,6 @@ export default {
   }
 }
 .container-general {
-  background: #f3f3f3;
   margin-top: -2.5rem;
 }
 html {
