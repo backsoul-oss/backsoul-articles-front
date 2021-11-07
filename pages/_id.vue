@@ -43,14 +43,13 @@ export default {
     }
   },
   head() {
-    if(this.article != null){
       return{
         title: this.article?.title,
         meta: [
           {
             hid:  'description',
             name:  'description',
-            content: this.article.textDescription,
+            content: this.article?.textDescription,
           },
           {
             property:  'og:title',
@@ -58,18 +57,17 @@ export default {
           },
           {
             property:  'og:description',
-            content: this.article.textDescription,
+            content: this.article?.textDescription,
           },
           {
             property:  'og:image',
-            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${article.image}`
+            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${article?.image}`
           },
           {
             property:  'og:type',
             content: 'article'
           },
         ]
-      }
     }
   },
   computed: {
