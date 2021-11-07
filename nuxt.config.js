@@ -12,6 +12,26 @@ export default {
             { name: 'copyright', content: 'backsoul' },
             { name: 'keywords', content: 'backsoul, backsoul articles,backsoul github' },
             { name: 'author', content: 'Daniel Steven Sarmiento, danielsarmientoenterprise@gmail.com' },
+            {
+                hid: 'og:title',
+                name: 'og:title',
+                content: 'Backsoul Articles',
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: 'https://avatars.githubusercontent.com/u/65988584?v=4',
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: 'Articulos creados por @backsoul en github pasando por nuxtjs,django,graphql,aws,docker,etc...',
+            },
+            {
+                hid: 'og:url',
+                property: 'og:url',
+                content: `https://articles.backsoul.xyz`,
+            },
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }

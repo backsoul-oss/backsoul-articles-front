@@ -66,7 +66,7 @@ export default {
             {
                 hid: 'og:image',
                 property: 'og:image',
-                content: `/${this.article.image}`,
+                content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.image}`,
             },
             {
                 hid: 'og:description',
@@ -76,7 +76,7 @@ export default {
             {
                 hid: 'og:url',
                 property: 'og:url',
-                content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.slug}`,
+                content: `https://articles.backsoul.xyz/${this.article.slug}`,
             },
         ],
     }
