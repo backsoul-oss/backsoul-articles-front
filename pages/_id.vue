@@ -60,7 +60,7 @@ export default {
           name: 'description',
           content: description
         },
-        ...this.$socialMeta({
+        this.$meta({
           url: "articles.backsoul.xyz",
           title: "Website Homepage",
           site_name: "Website",

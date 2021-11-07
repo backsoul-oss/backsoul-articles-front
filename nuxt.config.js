@@ -53,7 +53,8 @@ export default {
     plugins: [
         { src: '~/plugins/vue-iconsvg.js', mode: 'client' },
         { src: '~/plugins/vuesax.js', mode: 'client' },
-        { src: '~/plugins/social-meta.js', mode: 'client' },
+        { src: '~/plugins/meta.js', mode: 'client' },
+
     ],
 
     // Auto import components: https://go.nuxtjs.dev/config-components
@@ -77,8 +78,8 @@ export default {
     apollo: {
         clientConfigs: {
             default: {
-                httpEndpoint: 'https://backsoul-articles-back.herokuapp.com/graphql',
-                // httpEndpoint: 'http://localhost:8000/graphql',
+                // httpEndpoint: 'https://backsoul-articles-back.herokuapp.com/graphql',
+                httpEndpoint: 'http://localhost:8000/graphql',
             }
         }
     },
