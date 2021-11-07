@@ -32,6 +32,11 @@ export default {
                 property: 'og:url',
                 content: `https://articles.backsoul.xyz`,
             },
+            {
+                hid: 'og:type',
+                property: 'og:type',
+                content: 'article',
+            },
         ],
         link: [
             { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
