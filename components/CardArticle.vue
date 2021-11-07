@@ -22,7 +22,7 @@
         class="rounded-t-lg"
       />
       <div class="flexflex-col w-full">
-        <div class="flex flex-col items-start w-full m-3 text-tertiary" style="padding: .5rem;">
+        <div class="flex flex-col items-start w-full m-3 text-tertiary">
           <p style="font-weight: 300;" class="mb-2">
             {{ convertDate(article.createdAt) }}
           </p>
