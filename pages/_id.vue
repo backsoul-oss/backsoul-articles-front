@@ -49,7 +49,7 @@ export default {
       },
     }
   },
-  head :{
+  head: {
           title: this.article.title,
           meta: [
               {
