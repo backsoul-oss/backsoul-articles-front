@@ -51,7 +51,23 @@ export default {
             hid:  'description',
             name:  'description',
             content: this.article.textDescription,
-          }
+          },
+          {
+            property:  'og:title',
+            content: this.article?.title,
+          },
+          {
+            property:  'og:description',
+            content: this.article.textDescription,
+          },
+          {
+            property:  'og:image',
+            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${article.image}`
+          },
+          {
+            property:  'og:type',
+            content: 'article'
+          },
         ]
       }
     }
