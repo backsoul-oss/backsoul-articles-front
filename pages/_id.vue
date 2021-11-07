@@ -47,8 +47,8 @@ export default {
       title: this.article?.title,
       meta: [
         {
-          hid:  this.article?.title,
-          name:  this.article?.title,
+          hid:  'description',
+          name:  'description',
           content: this.article?.textDescription,
         }
       ]
