@@ -50,36 +50,32 @@ export default {
     }
   },
   head() {
-     return{
-          title: this.article.title,
-          meta: [
-             {
-            hid:  'description',
-            name:  'description',
-            content: this.article.textDescription,
-          },
-          {
-            hid: 'og:title',
-            name: 'og:title',
-            content: this.article.title,
-          },
-          {
-            hid:  'og:description',
-            name: 'og:description',
-            content: this.article.textDescription,
-          },
-          {
-            hid:  'og:image',
-            name: 'og:image',
-            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.image}`
-          },
-          {
-            hid:   'og:type',
-            name: 'og:type',
-            content: 'article'
-          },
-          ]
-      }
+    return {
+      title: this.article.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.article.textDescription,
+        },
+        { hid: 'og:title', name: 'og:title', content: this.project.title },
+        {
+          hid: 'og:image',
+          name: 'og:image',
+          content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.image}`,
+        },
+        {
+          hid: 'og:description',
+          name: 'og:description',
+          content: this.article.textDescription,
+        },
+        {
+          hid: 'og:type',
+          name: 'og:type',
+          content: 'article',
+        },
+      ],
+    }
   },
   computed: {
     markdownToHtml() {
@@ -134,12 +130,12 @@ export default {
   }
 
   > p {
-      > img {
-        width: 100vw !important;
-        height: auto;
-        object-fit: cover;
-      }
+    > img {
+      width: 100vw !important;
+      height: auto;
+      object-fit: cover;
     }
+  }
   > blockquote {
     width: 100%;
     height: auto;
