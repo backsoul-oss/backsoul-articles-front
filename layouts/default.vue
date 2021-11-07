@@ -1,5 +1,6 @@
 <template>
 <div class="h-screen bg-background-primary" :class="theme">
+  <FloatButton class="block sm:hidden"/>
   <Loading v-if="loading"/>
   <client-only>
   <Header />

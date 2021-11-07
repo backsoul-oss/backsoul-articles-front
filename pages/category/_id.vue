@@ -1,8 +1,8 @@
 <template>
   <div class="h-full" >
      <div class="text-center" >
-
-      <div class="flex justify-center w-screen">
+      <div class="flex justify-center items-center w-screen flex-col">
+       <h1 class="text-primary text-left text-2xl w-4/6 xl:w-3/4 2xl:w-2/4">{{ category_name }}</h1>
         <div
           class="
             grid grid-cols-1
@@ -27,17 +27,18 @@
 </template>
 
 <script>
-import { ARTICLES } from '~/graphql/query'
+import { ARTICLES, CATEGORY_BY_ID } from '~/graphql/query'
 export default {
   data(){
     return {
       articles: [],
     id: this.$route.params.id,
+    category_name:""
   }
   },
   methods: {
     async getArticles() {
-      this.$apollo
+      await this.$apollo
         .query({
           query: ARTICLES,
           variables: {
@@ -50,10 +51,25 @@ export default {
         })
     },
 
+    async getCategory(){
+      await this.$apollo
+        .query({
+          query: CATEGORY_BY_ID,
+          variables: {
+            id: Number(this.id),
+          },
+        })
+        .then(({ data }) => {
+          this.category_name = data.categoryById.name
+          this.$store.dispatch('linkShared', `category/${this.id}`)
+        })
+    }
+
   },
   mounted() {
     this.$store.dispatch('loading', true)
     this.getArticles()
+    this.getCategory()
   },
 }
 </script>

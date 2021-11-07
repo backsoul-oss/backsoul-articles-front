@@ -62,9 +62,6 @@ export default {
           query: ARTICLES,
         })
         .then(({ data }) => {
-          console.log('====================================')
-          console.log(data.allArticles)
-          console.log('====================================')
           this.articles = data.allArticles
         })
     },

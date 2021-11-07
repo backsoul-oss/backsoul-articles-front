@@ -61,6 +61,7 @@ export default {
         })
         .then(({ data }) => {
           this.$store.dispatch('loading', false)
+          this.$store.dispatch('linkShared', data.articleBySlug.Slug)
           this.article = data.articleBySlug
         })
     },

@@ -49,6 +49,7 @@ export default {
 
   },
   mounted() {
+    this.$store.dispatch('linkShared', '')
     this.$store.dispatch('loading', true)
     this.getArticles()
   },

@@ -1,6 +1,7 @@
 export const state = () => ({
     theme: 'theme-dark',
-    loading: false
+    loading: false,
+    linkShared: ''
 });
 
 export const actions = {
@@ -9,7 +10,10 @@ export const actions = {
     },
     loading({ commit }, loading) {
         commit('setLoading', loading);
-    }
+    },
+    linkShared({ commit }, link) {
+        commit('setLinkShared', link);
+    },
 }
 
 export const mutations = {
@@ -18,5 +22,8 @@ export const mutations = {
     },
     setLoading(state, loading) {
         state.loading = loading;
-    }
+    },
+    setLinkShared(state, link) {
+        state.linkShared = link;
+    },
 }

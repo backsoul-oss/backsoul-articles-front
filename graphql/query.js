@@ -33,7 +33,7 @@ query articleById($slug: String!){
 `;
 
 export const CATEGORY_BY_ID = gql `
-query categoryById($id: ID!){
+query categoryById($id: Int!){
   categoryById(id:$id){
     id
     name
