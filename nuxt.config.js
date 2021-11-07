@@ -8,7 +8,6 @@ export default {
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
             { hid: 'description', name: 'Articulos creados por @backsoul en github pasando por nuxtjs,django,graphql,aws,docker,etc...', content: '' },
             { name: 'format-detection', content: 'telephone=no' },
-            { name: 'url', content: 'articles.backsoul.xyz' },
             { name: 'copyright', content: 'backsoul' },
             { name: 'keywords', content: 'backsoul, backsoul articles,backsoul github' },
             { name: 'author', content: 'Daniel Steven Sarmiento, danielsarmientoenterprise@gmail.com' },
