@@ -50,25 +50,27 @@ export default {
     }
   },
   head() {
-    return {
-        title: this.article.title,
-        meta: [
-            {
-                hid: 'description',
-                name: 'description',
-                content: this.article.description,
-            },
-            {
-                hid: 'og:title',
-                name: 'og:title',
-                content: this.article.title,
-            },
-            {
-                hid: 'og:url',
-                property: 'og:url',
-                content: `https://articles.backsoul.xyz/${this.article.slug}`,
-            },
-        ],
+    if(this.article.title != ''){
+      return {
+          title: this.article.title,
+          meta: [
+              {
+                  hid: 'description',
+                  name: 'description',
+                  content: this.article.description,
+              },
+              {
+                  hid: 'og:title',
+                  name: 'og:title',
+                  content: this.article.title,
+              },
+              {
+                  hid: 'og:url',
+                  property: 'og:url',
+                  content: `https://articles.backsoul.xyz/${this.article.slug}`,
+              },
+          ],
+      }
     }
 },
   computed: {
