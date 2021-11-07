@@ -50,22 +50,22 @@ export default {
     }
   },
   head: {
-          title: this.article.title,
+          title: this.article?.title,
           meta: [
               {
                   hid: 'description',
                   name: 'description',
-                  content: this.article.description,
+                  content: this.article?.description,
               },
               {
                   hid: 'og:title',
                   name: 'og:title',
-                  content: this.article.title,
+                  content: this.article?.title,
               },
               {
                   hid: 'og:url',
                   property: 'og:url',
-                  content: `https://articles.backsoul.xyz/${this.article.slug}`,
+                  content: `https://articles.backsoul.xyz/${this.article?.slug}`,
               },
           ],
 },
