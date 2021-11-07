@@ -92,13 +92,21 @@ export default {
     font-family: inherit;
     text-align: start;
   }
+
+  > p {
+      > img {
+        width: 100vw !important;
+        height: auto;
+        object-fit: cover;
+      }
+    }
   > blockquote {
     width: 100%;
     height: auto;
     margin: 1rem 0;
     > p {
       > img {
-        width: 100vw;
+        width: 100vw !important;
         height: auto;
         object-fit: cover;
       }
