@@ -101,12 +101,6 @@ export default {
         width: 100vw;
         height: auto;
         object-fit: cover;
-        height: 10rem;
-      }
-      @media screen and (min-width: 1040px) {
-        > img {
-          height: 35rem;
-        }
       }
     }
   }
