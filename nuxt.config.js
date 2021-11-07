@@ -28,11 +28,6 @@ export default {
                 content: 'Articulos creados por @backsoul en github pasando por nuxtjs,django,graphql,aws,docker,etc...',
             },
             {
-                hid: 'og:url',
-                property: 'og:url',
-                content: `https://articles.backsoul.xyz`,
-            },
-            {
                 hid: 'og:type',
                 property: 'og:type',
                 content: 'article',

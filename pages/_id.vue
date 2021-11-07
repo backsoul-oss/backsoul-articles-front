@@ -51,34 +51,7 @@ export default {
   },
   head() {
     return {
-        title: this.article.title,
-        meta: [
-            {
-                hid: 'description',
-                name: 'description',
-                content: this.article.description,
-            },
-            {
-                hid: 'og:title',
-                name: 'og:title',
-                content: this.article.title,
-            },
-            {
-                hid: 'og:image',
-                property: 'og:image',
-                content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.image}`,
-            },
-            {
-                hid: 'og:description',
-                property: 'og:description',
-                content: this.article.description,
-            },
-            {
-                hid: 'og:url',
-                property: 'og:url',
-                content: `https://articles.backsoul.xyz/${this.article.slug}`,
-            },
-        ],
+        title: this.article.title
     }
 },
   computed: {
