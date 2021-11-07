@@ -43,6 +43,7 @@ export default {
     }
   },
   head() {
+    if(this.article != null) {
       return{
         title: this.article?.title,
         meta: [
@@ -52,22 +53,27 @@ export default {
             content: this.article?.textDescription,
           },
           {
+            hid:  'og:title',
             property:  'og:title',
             content: this.article?.title,
           },
           {
+            hid:  'og:description',
             property:  'og:description',
             content: this.article?.textDescription,
           },
           {
+            hid:  'og:image',
             property:  'og:image',
-            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${article?.image}`
+            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article?.image}`
           },
           {
+            hid:   'og:type',
             property:  'og:type',
             content: 'article'
           },
         ]
+    }
     }
   },
   computed: {

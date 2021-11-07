@@ -1,12 +1,13 @@
 export default {
     target: 'static',
+    ssr: true,
     // Global page headers: https://go.nuxtjs.dev/config-head
     head: {
         title: 'Backsoul articles',
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'Articulos creados por @backsoul en github pasando por nuxtjs,django,graphql,aws,docker,etc...', content: '' },
+            { hid: 'description', name: 'description', content: 'Articulos creados por @backsoul en github pasando por nuxtjs,django,graphql,aws,docker,etc...', content: '' },
             { name: 'format-detection', content: 'telephone=no' },
             { name: 'copyright', content: 'backsoul' },
             { name: 'keywords', content: 'backsoul, backsoul articles,backsoul github' },
