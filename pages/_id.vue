@@ -43,15 +43,17 @@ export default {
     }
   },
   head() {
-    return{
-      title: this.article?.title,
-      meta: [
-        {
-          hid:  'description',
-          name:  'description',
-          content: this.article?.textDescription,
-        }
-      ]
+    if(this.article != null){
+      return{
+        title: this.article?.title,
+        meta: [
+          {
+            hid:  'description',
+            name:  'description',
+            content: this.article.textDescription,
+          }
+        ]
+      }
     }
   },
   computed: {
