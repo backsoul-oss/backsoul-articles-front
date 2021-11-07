@@ -5,6 +5,7 @@
         :src="`https://res.cloudinary.com/backsoul/image/upload/v1/${article.image}`"
         alt=""
         srcset=""
+        v-if="article.image"
         style="object-fit: cover"
         class="h-60 2xl:h-96"
       />
@@ -39,41 +40,50 @@ import dayjs from 'dayjs'
 export default {
   data() {
     return {
-      article: null,
+      article: {
+        title: '',
+        content: '',
+        image: '',
+        createdAt: '',
+        categories: [],
+      },
     }
   },
   head() {
-    if(this.article != null) {
-      return{
-        title: this.article?.title,
+    return{
+
+        title: this.article.title,
         meta: [
           {
             hid:  'description',
             name:  'description',
-            content: this.article?.textDescription,
+            content: this.article.textDescription,
           },
           {
-            hid:  'og:title',
-            property:  'og:title',
-            content: this.article?.title,
+            hid: 'og:title',
+            name: 'og:title',
+            property: 'og:title',
+            content: this.article.title,
           },
           {
             hid:  'og:description',
+            name: 'og:description',
             property:  'og:description',
-            content: this.article?.textDescription,
+            content: this.article.textDescription,
           },
           {
             hid:  'og:image',
+            name: 'og:image',
             property:  'og:image',
-            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article?.image}`
+            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.image}`
           },
           {
             hid:   'og:type',
+            name: 'og:type',
             property:  'og:type',
             content: 'article'
           },
         ]
-    }
     }
   },
   computed: {
