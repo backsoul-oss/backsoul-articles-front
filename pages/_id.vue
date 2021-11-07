@@ -49,9 +49,7 @@ export default {
       },
     }
   },
-  head() {
-    if(this.article.title != ''){
-      return {
+  head :{
           title: this.article.title,
           meta: [
               {
@@ -70,8 +68,6 @@ export default {
                   content: `https://articles.backsoul.xyz/${this.article.slug}`,
               },
           ],
-      }
-    }
 },
   computed: {
     markdownToHtml() {
