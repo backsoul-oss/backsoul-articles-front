@@ -54,27 +54,35 @@ export default {
       return{
           title: this.article.title,
           meta: [
-            {
-              hid:  'description',
-              name:  'description',
-              content: this.article.textDescription,
-            },
-            {
-              property: 'og:title',
-              content: this.article.title,
-            },
-            {
-              property:  'og:description',
-              content: this.article.textDescription,
-            },
-            {
-              property:  'og:image',
-              content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.image}`
-            },
-            {
-              property:  'og:type',
-              content: 'article'
-            },
+             {
+            hid:  'description',
+            name:  'description',
+            content: this.article.textDescription,
+          },
+          {
+            hid: 'og:title',
+            name: 'og:title',
+            property: 'og:title',
+            content: this.article.title,
+          },
+          {
+            hid:  'og:description',
+            name: 'og:description',
+            property:  'og:description',
+            content: this.article.textDescription,
+          },
+          {
+            hid:  'og:image',
+            name: 'og:image',
+            property:  'og:image',
+            content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.image}`
+          },
+          {
+            hid:   'og:type',
+            name: 'og:type',
+            property:  'og:type',
+            content: 'article'
+          },
           ]
       }
     }
