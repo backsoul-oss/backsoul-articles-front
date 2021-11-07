@@ -50,27 +50,27 @@ export default {
     }
   },
   head() {
+    const description = 'Your website description here'
+
     return {
-      title: this.article.title ? this.article.title : '',
+      title: 'Homepage',
       meta: [
         {
           hid: 'description',
           name: 'description',
-          content: this.article.description ? this.article.description : '',
+          content: description
         },
-        {
-          hid: 'og:title',
-          name: 'og:title',
-          content: this.article.title ? this.article.title : '',
-        },
-        {
-          hid: 'og:url',
-          property: 'og:url',
-          content: `https://articles.backsoul.xyz/${
-            this.article.Slug ? this.article.Slug : ''
-          }`,
-        },
-      ],
+        ...this.$socialMeta({
+          url: "articles.backsoul.xyz",
+          title: "Website Homepage",
+          site_name: "Website",
+          description: description,
+          img: 'website-image.jpg',
+          locale: "en",
+          twitter: "@website-twitter-handle",
+          twitter_card: "summary_large_image",
+        })
+      ]
     }
   },
   computed: {
