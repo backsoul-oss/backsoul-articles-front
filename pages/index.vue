@@ -7,7 +7,7 @@
             grid grid-cols-1
             gap-5
             mx-5
-            w-full
+            w-4/6
             xl:w-3/4
             2xl:w-2/4
             xl:grid-cols-2
