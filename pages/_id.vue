@@ -42,6 +42,16 @@ export default {
       article: null,
     }
   },
+  head: {
+    title: this.article.title,
+    meta: [
+      {
+        hid:  this.article.title,
+        name:  this.article.title,
+        content: this.article.textDescription,
+      }
+    ],
+  },
   computed: {
     markdownToHtml() {
       return marked(this.article.content)

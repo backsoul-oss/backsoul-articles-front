@@ -6,7 +6,7 @@ export default {
         meta: [
             { charset: 'utf-8' },
             { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-            { hid: 'description', name: 'description', content: '' },
+            { hid: 'description', name: 'Articulos creados por @backsoul en github pasando por nuxtjs,django,graphql,aws,docker,etc...', content: '' },
             { name: 'format-detection', content: 'telephone=no' }
         ],
         link: [
