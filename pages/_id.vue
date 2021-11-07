@@ -50,8 +50,7 @@ export default {
     }
   },
   head() {
-    if(this.article != null){
-      return{
+     return{
           title: this.article.title,
           meta: [
              {
@@ -85,7 +84,6 @@ export default {
           },
           ]
       }
-    }
   },
   computed: {
     markdownToHtml() {
