@@ -49,26 +49,30 @@ export default {
       },
     }
   },
-  head: {
-          title: this.article?.title,
-          meta: [
-              {
-                  hid: 'description',
-                  name: 'description',
-                  content: this.article?.description,
-              },
-              {
-                  hid: 'og:title',
-                  name: 'og:title',
-                  content: this.article?.title,
-              },
-              {
-                  hid: 'og:url',
-                  property: 'og:url',
-                  content: `https://articles.backsoul.xyz/${this.article?.slug}`,
-              },
-          ],
-},
+  head() {
+    return {
+      title: this.article.title ? this.article.title : '',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.article.description ? this.article.description : '',
+        },
+        {
+          hid: 'og:title',
+          name: 'og:title',
+          content: this.article.title ? this.article.title : '',
+        },
+        {
+          hid: 'og:url',
+          property: 'og:url',
+          content: `https://articles.backsoul.xyz/${
+            this.article.Slug ? this.article.Slug : ''
+          }`,
+        },
+      ],
+    }
+  },
   computed: {
     markdownToHtml() {
       return marked(this.article.content)
