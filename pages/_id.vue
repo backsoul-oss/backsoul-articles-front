@@ -51,32 +51,36 @@ export default {
   },
   head() {
     return {
-      title: this.article.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.article.textDescription,
-        },
-        { hid: 'og:title', name: 'og:title', content: this.project.title },
-        {
-          hid: 'og:image',
-          name: 'og:image',
-          content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.image}`,
-        },
-        {
-          hid: 'og:description',
-          name: 'og:description',
-          content: this.article.textDescription,
-        },
-        {
-          hid: 'og:type',
-          name: 'og:type',
-          content: 'article',
-        },
-      ],
+        title: this.article.title,
+        meta: [
+            {
+                hid: 'description',
+                name: 'description',
+                content: this.article.description,
+            },
+            {
+                hid: 'og:title',
+                name: 'og:title',
+                content: this.article.title,
+            },
+            {
+                hid: 'og:image',
+                property: 'og:image',
+                content: `/${this.article.image}`,
+            },
+            {
+                hid: 'og:description',
+                property: 'og:description',
+                content: this.article.description,
+            },
+            {
+                hid: 'og:url',
+                property: 'og:url',
+                content: `https://res.cloudinary.com/backsoul/image/upload/v1/${this.article.slug}`,
+            },
+        ],
     }
-  },
+},
   computed: {
     markdownToHtml() {
       return marked(this.article.content)
