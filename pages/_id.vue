@@ -39,16 +39,16 @@ import dayjs from 'dayjs'
 export default {
   data() {
     return {
-      article: null,
+      article: {},
     }
   },
   head: {
-    title: this.article.title,
+    title: this.article?.title,
     meta: [
       {
-        hid:  this.article.title,
-        name:  this.article.title,
-        content: this.article.textDescription,
+        hid:  this.article?.title,
+        name:  this.article?.title,
+        content: this.article?.textDescription,
       }
     ],
   },
