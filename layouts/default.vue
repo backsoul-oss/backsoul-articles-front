@@ -27,6 +27,6 @@ export default {
 <style>
 html,body {
   overflow-x: hidden;
-  background: var(--color-bg-primary);
+  @apply bg-background-primary
 }
 </style>
