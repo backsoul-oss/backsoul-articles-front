@@ -4,7 +4,7 @@
   <Loading v-if="loading"/>
   <client-only>
   <Header />
-  <div class="bg-background-primary min-h-screen">
+  <div class="bg-background-primary">
    <Nuxt />
   </div>
    <Footer />
