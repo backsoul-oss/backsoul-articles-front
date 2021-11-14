@@ -92,7 +92,5 @@ export default {
 .container-general {
   margin-top: -2.5rem;
 }
-html {
-  overflow-x: hidden;
-}
+
 </style>

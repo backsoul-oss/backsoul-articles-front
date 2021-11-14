@@ -145,7 +145,5 @@ export default {
     }
   }
 }
-html {
-  background-color: white;
-}
+
 </style>

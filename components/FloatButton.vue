@@ -35,6 +35,11 @@ export default {
   methods: {
     toggleTheme() {
       const theme = this.theme === 'theme-light' ? 'theme-dark' : 'theme-light'
+      const color = this.theme != 'theme-light' ? '#fafafa' : '#4b4b4b'
+       document.documentElement.style.setProperty(
+                '--bg-background-primary',
+                color
+              )
       this.$store.dispatch('changeTheme', theme)
     },
   },
