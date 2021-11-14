@@ -16,4 +16,8 @@
 
 :root {
     --bg-background-primary: #4b4b4b;
+    html,
+    body {
+        background-color: var(--bg-background-primary);
+    }
 }
